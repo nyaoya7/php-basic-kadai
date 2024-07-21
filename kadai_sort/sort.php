@@ -13,16 +13,8 @@
         $nums = [15, 4, 18, 23, 10 ];
 
         // ソート関数を昇順で呼び出し
-        $nums = sort_2way ($nums, TRUE);
-        foreach ($nums as $value) {
-            echo $value.'<br>';
-        }
-
-        $nums = sort_2way ($nums, FALSE);
-
-        foreach ($nums as $value) {
-            echo $value.'<br>';
-        }
+        sort_2way ($nums, TRUE);
+        sort_2way ($nums, FALSE);
 
         // ソート関数の定義
         function sort_2way ($num_arg, $order) {
@@ -33,7 +25,11 @@
                 rsort($num_arg);
                 echo '降順にソートします。<br>';
             }
-            return $num_arg;
+
+            // 結果の出力
+            foreach ($num_arg as $value) {
+                echo $value.'<br>';
+            }
         }
 
 
